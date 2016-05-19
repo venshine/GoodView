@@ -53,13 +53,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void collection(View view) {
         ((ImageView) view).setImageResource(R.mipmap.collection_checked);
-        mGoodView.setTextInfo("收藏成功", Color.parseColor("#f66467"), 14);
+        mGoodView.setTextInfo("收藏成功", Color.parseColor("#f66467"), 12);
         mGoodView.show(view);
     }
 
     public void bookmark(View view) {
         ((ImageView) view).setImageResource(R.mipmap.bookmark_checked);
-        mGoodView.setTextInfo("收藏成功", Color.parseColor("#ff941A"), 14);
+        mGoodView.setTextInfo("收藏成功", Color.parseColor("#ff941A"), 12);
         mGoodView.show(view);
     }
 

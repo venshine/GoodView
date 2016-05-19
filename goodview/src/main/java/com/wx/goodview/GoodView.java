@@ -159,16 +159,6 @@ public class GoodView extends PopupWindow implements IGoodView {
     }
 
     /**
-     * 设置动画时长
-     *
-     * @param duration
-     */
-    public void setDuration(int duration) {
-        mDuration = duration;
-        mChanged = true;
-    }
-
-    /**
      * 设置图片
      *
      * @param resId
@@ -229,6 +219,16 @@ public class GoodView extends PopupWindow implements IGoodView {
     public void setAlpha(float fromAlpha, float toAlpha) {
         mFromAlpha = fromAlpha;
         mToAlpha = toAlpha;
+        mChanged = true;
+    }
+
+    /**
+     * 设置动画时长
+     *
+     * @param duration
+     */
+    public void setDuration(int duration) {
+        mDuration = duration;
         mChanged = true;
     }
 
