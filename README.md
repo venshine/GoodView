@@ -1,5 +1,5 @@
 # GoodView
-Android点赞+1效果，支持文本和图像。
+Android点赞+1效果，支持文本和图像
 
 ScreenShot
 --
@@ -30,8 +30,8 @@ Demo
                 public void onClick(View v) {
                     goodView.setText("+1");
                     goodView.show(v);
-            }
-        });
+                }
+            });
 
         }
     }
@@ -49,7 +49,7 @@ Demo
 | void **setAlpha**(float fromAlpha, float toAlpha)  	     | 设置透明度属性 |
 | void **setDuration**(int duration)  	     | 设置动画时长 |
 | void **reset**() 	     | 重置属性 |
-| void **show**(View v) 	     | 展示 |
+| void **show**(View v) 	     | 展示（required） |
 
 About
 --
