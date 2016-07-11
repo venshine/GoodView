@@ -1,4 +1,6 @@
-# GoodView
+# GoodView  
+[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)  
+
 Android点赞+1效果，支持文本和图像
 
 ScreenShot
