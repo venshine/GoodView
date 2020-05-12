@@ -1,94 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/button"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:onClick="reset"
-        android:text="reset"/>
+        android:text="reset"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gh"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
-            <ImageView
-                android:id="@+id/good"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_margin="20dp"
-                android:clickable="true"
-                android:onClick="good"
-                app:srcCompat="@mipmap/good"/>
+    <ImageView
+        android:id="@+id/good"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="good"
+        app:layout_constraintBottom_toBottomOf="@id/gh"
+        app:layout_constraintHeight_max="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/gv"
+        app:layout_constraintTop_toTopOf="@id/button"
+        app:layout_constraintWidth_max="30dp"
+        app:srcCompat="@mipmap/good" />
 
-        </RelativeLayout>
+    <ImageView
+        android:id="@+id/good2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="good2"
+        app:layout_constraintBottom_toBottomOf="@id/gh"
+        app:layout_constraintHeight_max="30dp"
+        app:layout_constraintLeft_toLeftOf="@id/gv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/button"
+        app:layout_constraintWidth_max="30dp"
+        app:srcCompat="@mipmap/good" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+    <ImageView
+        android:id="@+id/collection"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="collection"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_max="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/gv"
+        app:layout_constraintTop_toTopOf="@id/gh"
+        app:layout_constraintWidth_max="30dp"
+        app:srcCompat="@mipmap/collection" />
 
-            <ImageView
-                android:id="@+id/good2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:clickable="true"
-                android:onClick="good2"
-                app:srcCompat="@mipmap/good"/>
+    <ImageView
+        android:id="@+id/bookmark"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="bookmark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_max="30dp"
+        app:layout_constraintLeft_toLeftOf="@id/gv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gh"
+        app:layout_constraintWidth_max="30dp"
+        app:srcCompat="@mipmap/bookmark" />
 
-        </RelativeLayout>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <ImageView
-                android:id="@+id/collection"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:clickable="true"
-                android:onClick="collection"
-                app:srcCompat="@mipmap/collection"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <ImageView
-                android:id="@+id/bookmark"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:clickable="true"
-                android:onClick="bookmark"
-                app:srcCompat="@mipmap/bookmark"/>
-
-        </RelativeLayout>
-    </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
