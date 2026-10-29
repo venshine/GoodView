@@ -50,3 +50,8 @@ gradle-app.setting
 
 # Cache of project
 .gradletasknamecache
+
+# 私有内容与临时文件
+.private/
+.tmp/
+.kotlin/

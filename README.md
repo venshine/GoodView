@@ -10,8 +10,19 @@ ScreenShot
 Usage
 --
 ##### Gradle:
+1. 在 `settings.gradle` 中添加 JitPack 仓库：
 ```groovy
-compile 'com.wx.goodview:goodview:1.0.0'
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = 'https://jitpack.io' }
+    }
+}
+```
+2. 在模块的 `build.gradle` 中添加依赖：
+```groovy
+implementation 'com.github.venshine:GoodView:1.1.0'
 ```
 
 Demo
@@ -44,6 +55,8 @@ Demo
 |:---				 |:---|
 | void **setText**(String text)  	     | 设置文本（optional） |
 | void **setTextInfo**(String text, int textColor, int textSize)	     | 设置文本信息（optional） |
+| void **setTextColor**(int color)	     | 设置文本颜色（optional） |
+| void **setTextSize**(int textSize)	     | 设置文本大小，单位 dp（optional） |
 | void **setImage**(int resId) 	     | 设置图片（optional） |
 | void **setImage**(Drawable drawable) 	     | 设置图片（optional） |
 | void **setDistance**(int dis) 	     | 设置移动距离 |

@@ -21,9 +21,11 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -31,6 +33,8 @@ import android.view.animation.TranslateAnimation;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 /**
  * 点赞效果
@@ -88,11 +92,7 @@ public class GoodView extends PopupWindow implements IGoodView {
         layout.addView(mGood);
         setContentView(layout);
 
-        int w = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-        int h = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-        mGood.measure(w, h);
-        setWidth(mGood.getMeasuredWidth());
-        setHeight(mDistance + mGood.getMeasuredHeight());
+        resizeToContent();
         setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         setFocusable(false);
         setTouchable(false);
@@ -106,16 +106,38 @@ public class GoodView extends PopupWindow implements IGoodView {
      *
      * @param text
      */
-    public void setText(String text) {
+    public void setText(@NonNull String text) {
         if (TextUtils.isEmpty(text)) {
             throw new IllegalArgumentException("text cannot be null.");
         }
         mText = text;
         mGood.setText(text);
         mGood.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        setContentSize(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         int w = (int) mGood.getPaint().measureText(text);
         setWidth(w);
         setHeight(mDistance + getTextViewHeight(mGood, w));
+    }
+
+    /**
+     * 按内容的自然尺寸设置弹窗大小
+     */
+    private void resizeToContent() {
+        int w = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+        int h = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+        mGood.measure(w, h);
+        setWidth(mGood.getMeasuredWidth());
+        setHeight(mDistance + mGood.getMeasuredHeight());
+    }
+
+    /**
+     * 设置内容 View 的尺寸，图片模式下固定为图片尺寸，避免空文本的行高把图片拉伸
+     */
+    private void setContentSize(int width, int height) {
+        ViewGroup.LayoutParams params = mGood.getLayoutParams();
+        params.width = width;
+        params.height = height;
+        mGood.setLayoutParams(params);
     }
 
     private static int getTextViewHeight(TextView textView, int width) {
@@ -130,7 +152,7 @@ public class GoodView extends PopupWindow implements IGoodView {
      *
      * @param color
      */
-    private void setTextColor(int color) {
+    public void setTextColor(int color) {
         mTextColor = color;
         mGood.setTextColor(color);
     }
@@ -140,7 +162,7 @@ public class GoodView extends PopupWindow implements IGoodView {
      *
      * @param textSize
      */
-    private void setTextSize(int textSize) {
+    public void setTextSize(int textSize) {
         mTextSize = textSize;
         mGood.setTextSize(TypedValue.COMPLEX_UNIT_DIP, textSize);
     }
@@ -152,7 +174,7 @@ public class GoodView extends PopupWindow implements IGoodView {
      * @param textColor
      * @param textSize
      */
-    public void setTextInfo(String text, int textColor, int textSize) {
+    public void setTextInfo(@NonNull String text, int textColor, int textSize) {
         setTextColor(textColor);
         setTextSize(textSize);
         setText(text);
@@ -172,7 +194,7 @@ public class GoodView extends PopupWindow implements IGoodView {
      *
      * @param drawable
      */
-    public void setImage(Drawable drawable) {
+    public void setImage(@NonNull Drawable drawable) {
         if (drawable == null) {
             throw new IllegalArgumentException("drawable cannot be null.");
         }
@@ -182,6 +204,10 @@ public class GoodView extends PopupWindow implements IGoodView {
             mGood.setBackgroundDrawable(drawable);
         }
         mGood.setText("");
+        // 没有固有尺寸的 Drawable（如 ColorDrawable）返回 -1，按自适应处理
+        int width = drawable.getIntrinsicWidth() > 0 ? drawable.getIntrinsicWidth() : ViewGroup.LayoutParams.WRAP_CONTENT;
+        int height = drawable.getIntrinsicHeight() > 0 ? drawable.getIntrinsicHeight() : ViewGroup.LayoutParams.WRAP_CONTENT;
+        setContentSize(width, height);
         setWidth(drawable.getIntrinsicWidth());
         setHeight(mDistance + drawable.getIntrinsicHeight());
     }
@@ -247,6 +273,14 @@ public class GoodView extends PopupWindow implements IGoodView {
         mDistance = DISTANCE;
         mChanged = false;
         mAnimationSet = createAnimation();
+
+        // 同步界面，否则仍显示重置前的文本、颜色或图片
+        mGood.setText(mText);
+        mGood.setTextColor(mTextColor);
+        mGood.setTextSize(TypedValue.COMPLEX_UNIT_DIP, mTextSize);
+        mGood.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        setContentSize(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        resizeToContent();
     }
 
     /**
@@ -254,7 +288,7 @@ public class GoodView extends PopupWindow implements IGoodView {
      *
      * @param v
      */
-    public void show(View v) {
+    public void show(@NonNull View v) {
         if (!isShowing()) {
             int offsetY = -v.getHeight() - getHeight();
             showAsDropDown(v, v.getWidth() / 2 - getWidth() / 2, offsetY);
@@ -286,7 +320,7 @@ public class GoodView extends PopupWindow implements IGoodView {
             @Override
             public void onAnimationEnd(Animation animation) {
                 if (isShowing()) {
-                    new Handler().post(new Runnable() {
+                    new Handler(Looper.getMainLooper()).post(new Runnable() {
                         @Override
                         public void run() {
                             dismiss();
