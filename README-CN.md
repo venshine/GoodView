@@ -6,6 +6,8 @@
 
 Android点赞+1效果，支持文本和图像
 
+[**下载示例 APK**](https://github.com/venshine/GoodView/releases/download/2.0.1/GoodView-sample-2.0.1.apk)
+
 ScreenShot
 --
 ![](https://github.com/venshine/GoodView/blob/master/screenshot/screenshot.gif)

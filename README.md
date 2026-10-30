@@ -6,6 +6,8 @@ English | [简体中文](README-CN.md)
 
 A "+1" like animation for Android, supporting both text and images.
 
+[**Download the sample APK**](https://github.com/venshine/GoodView/releases/download/2.0.1/GoodView-sample-2.0.1.apk)
+
 ScreenShot
 --
 ![](https://github.com/venshine/GoodView/blob/master/screenshot/screenshot.gif)
