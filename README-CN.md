@@ -2,7 +2,7 @@
 
 [English](README.md) | 简体中文
 
-[![JitPack](https://jitpack.io/v/venshine/GoodView.svg)](https://jitpack.io/#venshine/GoodView)  [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)  
+[![JitPack](https://jitpack.io/v/venshine/GoodView.svg)](https://jitpack.io/#venshine/GoodView)  [![CI](https://github.com/venshine/GoodView/actions/workflows/ci.yml/badge.svg)](https://github.com/venshine/GoodView/actions/workflows/ci.yml)  [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)  
 
 Android点赞+1效果，支持文本和图像
 
