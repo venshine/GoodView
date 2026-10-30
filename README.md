@@ -25,29 +25,69 @@ dependencyResolutionManagement {
 implementation 'com.github.venshine:GoodView:2.0.0'
 ```
 
+##### Gradle Kotlin DSL:
+```kotlin
+// settings.gradle.kts
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://jitpack.io")
+    }
+}
+
+// build.gradle.kts
+implementation("com.github.venshine:GoodView:2.0.0")
+```
+
 Demo
 --
+库本身用 Java 编写，Java 和 Kotlin 都可以直接调用，不会给项目额外引入 Kotlin 依赖。
+
+##### Kotlin:
+```kotlin
+class MainActivity : AppCompatActivity() {
+    private lateinit var goodView: GoodView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        goodView = GoodView(this)
+        findViewById<ImageView>(R.id.good).setOnClickListener { v ->
+            goodView.setText("+1")
+            goodView.show(v)
+        }
+        findViewById<ImageView>(R.id.collection).setOnClickListener { v ->
+            goodView.setTextInfo("收藏成功", Color.parseColor("#f66467"), 12) // 文本、颜色、大小（dp）
+            goodView.show(v)
+        }
+        findViewById<ImageView>(R.id.like).setOnClickListener { v ->
+            goodView.setImage(R.mipmap.good_checked) // 图片
+            goodView.show(v)
+        }
+    }
+}
+```
 
 ##### Java:
 ```Java
-    public class MainActivity extends Activity {
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main)
+public class MainActivity extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-            final GoodView goodView = new GoodView(this);
-            Button button = new Button(this);
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    goodView.setText("+1");
-                    goodView.show(v);
-                }
-            });
-
-        }
+        final GoodView goodView = new GoodView(this);
+        findViewById(R.id.good).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goodView.setText("+1");
+                goodView.show(v);
+            }
+        });
     }
+}
 ```
 
 ##### Methods:
