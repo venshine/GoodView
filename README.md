@@ -1,7 +1,10 @@
 # GoodView  
+
+English | [简体中文](README-CN.md)
+
 [![JitPack](https://jitpack.io/v/venshine/GoodView.svg)](https://jitpack.io/#venshine/GoodView)  [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)  
 
-Android点赞+1效果，支持文本和图像
+A "+1" like animation for Android, supporting both text and images.
 
 ScreenShot
 --
@@ -10,7 +13,7 @@ ScreenShot
 Usage
 --
 ##### Gradle:
-1. 在 `settings.gradle` 中添加 JitPack 仓库：
+1. Add the JitPack repository to `settings.gradle`:
 ```groovy
 dependencyResolutionManagement {
     repositories {
@@ -20,7 +23,7 @@ dependencyResolutionManagement {
     }
 }
 ```
-2. 在模块的 `build.gradle` 中添加依赖：
+2. Add the dependency to your module's `build.gradle`:
 ```groovy
 implementation 'com.github.venshine:GoodView:2.0.1'
 ```
@@ -42,7 +45,7 @@ implementation("com.github.venshine:GoodView:2.0.1")
 
 Demo
 --
-库本身用 Java 编写，Java 和 Kotlin 都可以直接调用，不会给项目额外引入 Kotlin 依赖。
+The library is written in Java and can be called directly from both Java and Kotlin. It adds no Kotlin dependency to your project.
 
 ##### Kotlin:
 ```kotlin
@@ -59,11 +62,11 @@ class MainActivity : AppCompatActivity() {
             goodView.show(v)
         }
         findViewById<ImageView>(R.id.collection).setOnClickListener { v ->
-            goodView.setTextInfo("收藏成功", Color.parseColor("#f66467"), 12) // 文本、颜色、大小（dp）
+            goodView.setTextInfo("Saved", Color.parseColor("#f66467"), 12) // text, color, size (dp)
             goodView.show(v)
         }
         findViewById<ImageView>(R.id.like).setOnClickListener { v ->
-            goodView.setImage(R.mipmap.good_checked) // 图片
+            goodView.setImage(R.mipmap.good_checked) // image
             goodView.show(v)
         }
     }
@@ -91,24 +94,24 @@ public class MainActivity extends Activity {
 ```
 
 ##### Methods:
-| method 方法          | description 描述 |
+| method          | description |
 |:---				 |:---|
-| void **setText**(String text)  	     | 设置文本（optional） |
-| void **setTextInfo**(String text, int textColor, int textSize)	     | 设置文本信息（optional） |
-| void **setTextColor**(int color)	     | 设置文本颜色（optional） |
-| void **setTextSize**(int textSize)	     | 设置文本大小，单位 dp（optional） |
-| void **setImage**(int resId) 	     | 设置图片（optional） |
-| void **setImage**(Drawable drawable) 	     | 设置图片（optional） |
-| void **setDistance**(int dis) 	     | 设置移动距离 |
-| void **setTranslateY**(int fromY, int toY) 	     | 设置Y轴移动属性 |
-| void **setAlpha**(float fromAlpha, float toAlpha)  	     | 设置透明度属性 |
-| void **setDuration**(int duration)  	     | 设置动画时长 |
-| void **reset**() 	     | 重置属性 |
-| void **show**(View v) 	     | 展示（required） |
+| void **setText**(String text)  	     | Set the text (optional) |
+| void **setTextInfo**(String text, int textColor, int textSize)	     | Set the text, color and size (optional) |
+| void **setTextColor**(int color)	     | Set the text color (optional) |
+| void **setTextSize**(int textSize)	     | Set the text size in dp (optional) |
+| void **setImage**(int resId) 	     | Set the image (optional) |
+| void **setImage**(Drawable drawable) 	     | Set the image (optional) |
+| void **setDistance**(int dis) 	     | Set the moving distance |
+| void **setTranslateY**(int fromY, int toY) 	     | Set the Y-axis translation |
+| void **setAlpha**(float fromAlpha, float toAlpha)  	     | Set the alpha animation |
+| void **setDuration**(int duration)  	     | Set the animation duration |
+| void **reset**() 	     | Reset all properties |
+| void **show**(View v) 	     | Show the animation above the view (required) |
 
 About
 --
-* Email：venshine.cn@gmail.com
+* Email: venshine.cn@gmail.com
 
 License
 --
