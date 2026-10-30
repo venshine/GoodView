@@ -11,6 +11,7 @@ import android.graphics.drawable.ShapeDrawable;
 import android.os.Looper;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -113,5 +114,31 @@ public class GoodViewTest {
         idle();
 
         assertFalse(goodView.isShowing());
+    }
+    // 上一个弹窗动画未结束时在另一个按钮上展示新文本：旧实现直接忽略这次 show，弹窗停在旧按钮上，
+    // 窗口也沿用旧文本的宽度，新文本被挤成多行（issue #4，真机复现）。
+    // Robolectric 中 View 动画会在 idle 时立即结束并关闭弹窗，所以在第二次 show 后直接检查窗口参数
+    @Test
+    public void showWhileShowingMovesToNewAnchorAndResizes() {
+        View anchor2 = new View(activity);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(100, 100);
+        params.topMargin = 500;
+        params.leftMargin = 200;
+        root.addView(anchor2, params);
+        idle();
+
+        GoodView goodView = new GoodView(activity);
+        goodView.setText("+1");
+        goodView.show(anchor);
+        goodView.setTextInfo("收藏成功", Color.RED, 12);
+        goodView.show(anchor2);
+
+        assertTrue(goodView.isShowing());
+        WindowManager.LayoutParams lp =
+                (WindowManager.LayoutParams) goodView.getContentView().getRootView().getLayoutParams();
+        assertEquals(goodView.getWidth(), lp.width);
+        int[] location = new int[2];
+        anchor2.getLocationInWindow(location);
+        assertEquals(location[0] + anchor2.getWidth() / 2 - goodView.getWidth() / 2, lp.x);
     }
 }

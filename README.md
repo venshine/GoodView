@@ -22,7 +22,7 @@ dependencyResolutionManagement {
 ```
 2. 在模块的 `build.gradle` 中添加依赖：
 ```groovy
-implementation 'com.github.venshine:GoodView:2.0.0'
+implementation 'com.github.venshine:GoodView:2.0.1'
 ```
 
 ##### Gradle Kotlin DSL:
@@ -37,7 +37,7 @@ dependencyResolutionManagement {
 }
 
 // build.gradle.kts
-implementation("com.github.venshine:GoodView:2.0.0")
+implementation("com.github.venshine:GoodView:2.0.1")
 ```
 
 Demo

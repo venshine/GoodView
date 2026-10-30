@@ -49,7 +49,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.github.venshine'
             artifactId = 'GoodView'
-            version = '2.0.0'
+            version = '2.0.1'
 
             afterEvaluate {
                 from components.release

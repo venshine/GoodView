@@ -289,15 +289,20 @@ public class GoodView extends PopupWindow implements IGoodView {
      * @param v
      */
     public void show(@NonNull View v) {
-        if (!isShowing()) {
-            int offsetY = -v.getHeight() - getHeight();
-            showAsDropDown(v, v.getWidth() / 2 - getWidth() / 2, offsetY);
-            if (mAnimationSet == null || mChanged) {
-                mAnimationSet = createAnimation();
-                mChanged = false;
-            }
-            mGood.startAnimation(mAnimationSet);
+        int offsetX = v.getWidth() / 2 - getWidth() / 2;
+        int offsetY = -v.getHeight() - getHeight();
+        if (isShowing()) {
+            // 上一次动画未结束时再次展示：移到新的锚点并按新内容调整窗口大小，
+            // 否则弹窗停在旧位置，且沿用旧文本的宽度导致新文本换行（issue #4）
+            update(v, offsetX, offsetY, getWidth(), getHeight());
+        } else {
+            showAsDropDown(v, offsetX, offsetY);
         }
+        if (mAnimationSet == null || mChanged) {
+            mAnimationSet = createAnimation();
+            mChanged = false;
+        }
+        mGood.startAnimation(mAnimationSet);
     }
 
     /**
