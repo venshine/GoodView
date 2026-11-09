@@ -6,8 +6,6 @@
 
 Android点赞+1效果，支持文本和图像
 
-[**下载示例 APK**](https://github.com/venshine/GoodView/releases/download/2.0.1/GoodView-sample-2.0.1.apk)
-
 ScreenShot
 --
 <img src="screenshot/demo.gif" width="300" alt="GoodView 演示" />
@@ -37,7 +35,7 @@ dependencyResolutionManagement {
 ```
 2. 在模块的 `build.gradle` 中添加依赖：
 ```groovy
-implementation 'com.github.venshine:GoodView:2.0.1'
+implementation 'com.github.venshine:GoodView:2.0.2'
 ```
 
 ##### Gradle Kotlin DSL:
@@ -52,7 +50,7 @@ dependencyResolutionManagement {
 }
 
 // build.gradle.kts
-implementation("com.github.venshine:GoodView:2.0.1")
+implementation("com.github.venshine:GoodView:2.0.2")
 ```
 
 Demo

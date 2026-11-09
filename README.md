@@ -6,8 +6,6 @@ English | [简体中文](README-CN.md)
 
 A "+1" like animation for Android, supporting both text and images.
 
-[**Download the sample APK**](https://github.com/venshine/GoodView/releases/download/2.0.1/GoodView-sample-2.0.1.apk)
-
 ScreenShot
 --
 <img src="screenshot/demo.gif" width="300" alt="GoodView demo" />
@@ -37,7 +35,7 @@ dependencyResolutionManagement {
 ```
 2. Add the dependency to your module's `build.gradle`:
 ```groovy
-implementation 'com.github.venshine:GoodView:2.0.1'
+implementation 'com.github.venshine:GoodView:2.0.2'
 ```
 
 ##### Gradle Kotlin DSL:
@@ -52,7 +50,7 @@ dependencyResolutionManagement {
 }
 
 // build.gradle.kts
-implementation("com.github.venshine:GoodView:2.0.1")
+implementation("com.github.venshine:GoodView:2.0.2")
 ```
 
 Demo
