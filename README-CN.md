@@ -10,7 +10,17 @@ Android点赞+1效果，支持文本和图像
 
 ScreenShot
 --
-![](https://github.com/venshine/GoodView/blob/master/screenshot/screenshot.gif)
+<img src="screenshot/demo.gif" width="300" alt="GoodView 演示" />
+
+| 首页 | 深色模式 | 信息流 | 图片飘出 |
+|:---:|:---:|:---:|:---:|
+| <img src="screenshot/home.png" width="200" /> | <img src="screenshot/home_dark.png" width="200" /> | <img src="screenshot/feed.png" width="200" /> | <img src="screenshot/image.png" width="200" /> |
+
+| 动画实验室 | 连击 | 签到积分 |
+|:---:|:---:|:---:|
+| <img src="screenshot/lab.png" width="200" /> | <img src="screenshot/combo.png" width="200" /> | <img src="screenshot/checkin.png" width="200" /> |
+
+以上界面来自 [示例 App](sample)，覆盖库的全部 API，支持浅色和深色两套主题。
 
 Usage
 --
@@ -114,6 +124,14 @@ public class MainActivity extends Activity {
 About
 --
 * Email：venshine.cn@gmail.com
+
+Credits
+--
+示例 App 打包了以下字体，均采用 [SIL Open Font License 1.1](https://openfontlicense.org) 授权（协议原文见 [`sample/licenses/`](sample/licenses)）：
+* [Space Grotesk](https://github.com/floriankarsten/space-grotesk)：Copyright 2020 The Space Grotesk Project Authors
+* [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono)：Copyright 2020 The JetBrains Mono Project Authors
+
+库本身不包含任何字体。
 
 License
 --

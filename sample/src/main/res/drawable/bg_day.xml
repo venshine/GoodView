@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 签到日期格：selected 为已签到，activated 为今天待签到 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <shape>
+            <corners android:radius="12dp" />
+            <solid android:color="@color/gold_soft" />
+        </shape>
+    </item>
+    <item android:state_activated="true">
+        <shape>
+            <corners android:radius="12dp" />
+            <stroke
+                android:width="1.5dp"
+                android:color="@color/gold" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <corners android:radius="12dp" />
+            <solid android:color="@color/seg_bg" />
+        </shape>
+    </item>
+</selector>

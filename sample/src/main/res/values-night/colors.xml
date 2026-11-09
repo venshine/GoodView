@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 深色主题色板，颜色名与 values/colors.xml 一一对应 -->
+<resources>
+    <color name="bg">#111013</color>
+    <color name="surface">#19181C</color>
+    <color name="border">#26242A</color>
+    <color name="line">#2E2C33</color>
+    <color name="text">#F3F1EE</color>
+    <color name="text_muted">#9C9EA8</color>
+    <color name="text_dim">#8C8E99</color>
+    <color name="text_sub">#CBCDD4</color>
+    <color name="code_bg">#0D0C0F</color>
+    <color name="code_border">#29272D</color>
+    <color name="code_text">#E8E5DF</color>
+    <color name="code_comment">#8C8E99</color>
+    <color name="code_string">#A8D8B9</color>
+    <color name="seg_bg">#111013</color>
+    <color name="seg_on">#2E2C33</color>
+    <color name="accent">#FF5C78</color>
+    <color name="accent_ink">#FF7A90</color>
+    <color name="accent_soft">#24FF5C78</color>
+    <color name="on_accent">#22060C</color>
+    <color name="gold">#F5B940</color>
+    <color name="blue">#7DA2FF</color>
+    <color name="violet">#B79CFF</color>
+    <color name="gold_soft">#24F5B940</color>
+    <color name="ripple">#1FFFFFFF</color>
+    <color name="icon_red">#FF4F6D</color>
+    <color name="icon_amber">#F5A524</color>
+    <color name="icon_blue">#4F7BFA</color>
+    <color name="icon_orange">#FF7A3D</color>
+    <color name="icon_violet">#9A7BFF</color>
+    <color name="icon_mint">#2FBF8F</color>
+</resources>

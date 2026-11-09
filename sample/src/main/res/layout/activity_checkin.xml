@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/page_padding"
+        android:paddingTop="16dp"
+        android:paddingEnd="@dimen/page_padding"
+        android:paddingBottom="24dp">
+
+        <include layout="@layout/include_toolbar" />
+
+        <!-- 积分 -->
+        <LinearLayout
+            style="@style/Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                style="@style/Text.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/checkin_points" />
+
+            <TextView
+                android:id="@+id/points_text"
+                style="@style/Text.Numeric"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="44sp" />
+
+            <TextView
+                android:id="@+id/streak_text"
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gold"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- 本周 -->
+        <LinearLayout
+            style="@style/Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                style="@style/Text.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/checkin_week" />
+
+            <!-- 7 个日期格由 CheckinActivity.initDays 添加；上方留白给飘字 -->
+            <LinearLayout
+                android:id="@+id/day_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="72dp"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/checkin_button"
+                style="@style/Button"
+                android:layout_width="match_parent"
+                android:layout_marginTop="18dp" />
+
+            <TextView
+                android:id="@+id/reset_button"
+                style="@style/Button.Small"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="?attr/selectableItemBackground"
+                android:text="@string/checkin_reset" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/Text.Note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:text="@string/checkin_note" />
+
+        <include layout="@layout/include_code_card" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

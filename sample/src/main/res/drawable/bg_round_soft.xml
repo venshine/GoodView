@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 圆形浅色底，用于大号点击按钮和图标格子 -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/ripple">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/accent_soft" />
+        </shape>
+    </item>
+</ripple>

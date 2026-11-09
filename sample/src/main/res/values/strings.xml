@@ -1,3 +1,87 @@
 <resources>
     <string name="app_name">GoodView</string>
+
+    <string name="back">返回</string>
+    <string name="theme_to_dark">切换到深色模式</string>
+    <string name="theme_to_light">切换到浅色模式</string>
+    <string name="view_source">查看源码</string>
+    <string name="copied">已复制</string>
+    <string name="code">代码</string>
+    <string name="copy_code">复制代码</string>
+
+    <!-- 首页 -->
+    <string name="home_eyebrow">ANDROID · LIKE ANIMATION</string>
+    <string name="home_title">每一次轻点，\n都值得一点回应</string>
+    <string name="home_desc">「+1」飘字动画控件。文字、图片、颜色、距离、时长与透明度都能定制，一行 show(view) 挂到任意 View 上方。</string>
+    <string name="home_preview">实时预览 · 点点看</string>
+    <string name="home_examples">示例</string>
+    <string name="home_examples_hint">5 个场景，均可交互</string>
+    <string name="home_install">接入</string>
+    <string name="home_install_hint">JitPack · API 14+</string>
+    <string name="home_copy_dependency">复制依赖</string>
+    <string name="home_copied_dependency">已复制依赖</string>
+    <string name="home_license">Apache-2.0</string>
+    <string name="home_author">© venshine</string>
+
+    <string name="demo_lab">动画实验室</string>
+    <string name="demo_lab_desc">调文字、颜色、距离、时长与透明度，实时生成 Kotlin 代码</string>
+    <string name="demo_feed">信息流</string>
+    <string name="demo_feed_desc">点赞 · 收藏 · 转发\nsetTextInfo</string>
+    <string name="demo_image">图片飘出</string>
+    <string name="demo_image_desc">图标与 Emoji\nsetImage</string>
+    <string name="demo_combo">连击</string>
+    <string name="demo_combo_desc">快速连点\n动画中再次 show</string>
+    <string name="demo_checkin">签到积分</string>
+    <string name="demo_checkin_desc">更远更慢\nsetDistance</string>
+
+    <!-- 帖子 -->
+    <string name="post_like">点赞</string>
+    <string name="post_star">收藏</string>
+    <string name="post_share">转发</string>
+    <string name="pop_starred">收藏成功</string>
+    <string name="pop_unstarred">取消收藏</string>
+    <string name="pop_shared">转发 +1</string>
+
+    <!-- 动画实验室 -->
+    <string name="lab_reset">重置</string>
+    <string name="lab_preview">预览 · 点按爱心播放</string>
+    <string name="lab_play">播放动画</string>
+    <string name="lab_content">内容</string>
+    <string name="lab_mode_text">文字</string>
+    <string name="lab_mode_image">图片</string>
+    <string name="lab_presets_text">文案</string>
+    <string name="lab_presets_image">图片</string>
+    <string name="lab_color">颜色</string>
+    <string name="lab_text_size">字号</string>
+    <string name="lab_distance">移动距离</string>
+    <string name="lab_duration">动画时长</string>
+    <string name="lab_to_alpha">结束透明度</string>
+    <string name="lab_code">实时生成 · Kotlin</string>
+
+    <!-- 信息流 -->
+    <string name="feed_desc">点赞再点一次会取消，飘出灰色的「-1」。整页只有一个 GoodView 实例，每次 show() 前换上对应的文字与颜色。</string>
+
+    <!-- 图片飘出 -->
+    <string name="image_desc">setImage 接受任意 Drawable，按它的固有尺寸显示；下面的图标是着色后的矢量图。</string>
+    <string name="image_icons">图标 · setImage(drawable)</string>
+    <string name="image_emoji">Emoji · setText(text)</string>
+    <string name="image_emoji_hint">Emoji 也是文字，直接用 setText</string>
+
+    <!-- 连击 -->
+    <string name="combo_current">本轮连击</string>
+    <string name="combo_best">最高</string>
+    <string name="combo_total">累计</string>
+    <string name="combo_hint">快速连点，停手 1 秒后结算本轮</string>
+    <string name="combo_button">连击</string>
+    <string name="combo_note">上一次动画还没结束就再次 show()，弹窗会移到当前位置并按新文字调整宽度，不会换行也不会停在旧位置。连击越高，字越大，颜色从红到金再到紫。</string>
+
+    <!-- 签到 -->
+    <string name="checkin_points">我的积分</string>
+    <string name="checkin_streak_format">已连续签到 %1$d 天</string>
+    <string name="checkin_week">本周签到</string>
+    <string name="checkin_button_format">签到领 +%1$d 积分</string>
+    <string name="checkin_done">今日已签到</string>
+    <string name="checkin_reset">重置演示</string>
+    <string name="checkin_pop_format">+%1$d 积分</string>
+    <string name="checkin_note">奖励提示需要更醒目：调大移动距离和时长，飘字升得更高、停留更久。</string>
 </resources>

@@ -10,7 +10,17 @@ A "+1" like animation for Android, supporting both text and images.
 
 ScreenShot
 --
-![](https://github.com/venshine/GoodView/blob/master/screenshot/screenshot.gif)
+<img src="screenshot/demo.gif" width="300" alt="GoodView demo" />
+
+| Home | Dark mode | Feed | Images |
+|:---:|:---:|:---:|:---:|
+| <img src="screenshot/home.png" width="200" /> | <img src="screenshot/home_dark.png" width="200" /> | <img src="screenshot/feed.png" width="200" /> | <img src="screenshot/image.png" width="200" /> |
+
+| Animation lab | Combo | Check-in |
+|:---:|:---:|:---:|
+| <img src="screenshot/lab.png" width="200" /> | <img src="screenshot/combo.png" width="200" /> | <img src="screenshot/checkin.png" width="200" /> |
+
+The [sample app](sample) shows every API above, with light and dark themes.
 
 Usage
 --
@@ -114,6 +124,14 @@ public class MainActivity extends Activity {
 About
 --
 * Email: venshine.cn@gmail.com
+
+Credits
+--
+The sample app bundles these fonts, both licensed under the [SIL Open Font License 1.1](https://openfontlicense.org) (license texts in [`sample/licenses/`](sample/licenses)):
+* [Space Grotesk](https://github.com/floriankarsten/space-grotesk): Copyright 2020 The Space Grotesk Project Authors
+* [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono): Copyright 2020 The JetBrains Mono Project Authors
+
+The library itself bundles no fonts.
 
 License
 --

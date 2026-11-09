@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 固有尺寸 32dp：GoodView.setImage 按 Drawable 的固有尺寸显示 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="32dp"
+    android:height="32dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M12,2.5C12.7,8 16,11.3 21.5,12C16,12.7 12.7,16 12,21.5C11.3,16 8,12.7 2.5,12C8,11.3 11.3,8 12,2.5Z" />
+</vector>

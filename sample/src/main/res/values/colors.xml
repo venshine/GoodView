@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 浅色主题色板；深色版本在 values-night/colors.xml，两边的颜色名必须一一对应 -->
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="bg">#F6F3F1</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="border">#E9E2DE</color>
+    <color name="line">#DDD5D0</color>
+    <color name="text">#17161A</color>
+    <color name="text_muted">#5E5F68</color>
+    <color name="text_dim">#676873</color>
+    <color name="text_sub">#3B3C44</color>
+    <color name="code_bg">#FCFAF9</color>
+    <color name="code_border">#E9E2DE</color>
+    <color name="code_text">#24292F</color>
+    <color name="code_comment">#676873</color>
+    <color name="code_string">#2F7D4F</color>
+    <color name="seg_bg">#F0ECE9</color>
+    <color name="seg_on">#FFFFFF</color>
+    <color name="accent">#FF4F6D</color>
+    <!-- 强调色用作文字时的颜色：浅色背景上珊瑚红对比度不足，换成加深的同色系 -->
+    <color name="accent_ink">#C2183F</color>
+    <color name="accent_soft">#1FFF4F6D</color>
+    <color name="on_accent">#22060C</color>
+    <!-- 飘字的辅助色：金色用于收藏与积分，蓝色用于转发，紫色用于高连击 -->
+    <color name="gold">#A16207</color>
+    <color name="blue">#2563EB</color>
+    <color name="violet">#7C3AED</color>
+    <color name="gold_soft">#1FE8A317</color>
+    <color name="ripple">#1417161A</color>
+    <!-- 图片飘出页的图标色，深浅色下相同 -->
+    <color name="icon_red">#FF4F6D</color>
+    <color name="icon_amber">#F5A524</color>
+    <color name="icon_blue">#4F7BFA</color>
+    <color name="icon_orange">#FF7A3D</color>
+    <color name="icon_violet">#9A7BFF</color>
+    <color name="icon_mint">#2FBF8F</color>
 </resources>
