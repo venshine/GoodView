@@ -55,7 +55,7 @@ implementation("com.github.venshine:GoodView:2.0.2")
 
 Demo
 --
-The library is written in Java and can be called directly from both Java and Kotlin. It adds no Kotlin dependency to your project.
+The library is written in Kotlin and can be called directly from both Java and Kotlin. It depends on `kotlin-stdlib`.
 
 ##### Kotlin:
 ```kotlin

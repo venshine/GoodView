@@ -55,7 +55,7 @@ implementation("com.github.venshine:GoodView:2.0.2")
 
 Demo
 --
-库本身用 Java 编写，Java 和 Kotlin 都可以直接调用，不会给项目额外引入 Kotlin 依赖。
+库本身用 Kotlin 编写，Java 和 Kotlin 都可以直接调用，依赖 `kotlin-stdlib`。
 
 ##### Kotlin:
 ```kotlin
