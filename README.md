@@ -35,7 +35,7 @@ dependencyResolutionManagement {
 ```
 2. Add the dependency to your module's `build.gradle`:
 ```groovy
-implementation 'com.github.venshine:GoodView:2.0.2'
+implementation 'com.github.venshine:GoodView:3.0.0'
 ```
 
 ##### Gradle Kotlin DSL:
@@ -50,7 +50,7 @@ dependencyResolutionManagement {
 }
 
 // build.gradle.kts
-implementation("com.github.venshine:GoodView:2.0.2")
+implementation("com.github.venshine:GoodView:3.0.0")
 ```
 
 Demo
